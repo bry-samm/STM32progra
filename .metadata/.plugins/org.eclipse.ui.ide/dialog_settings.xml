@@ -9,12 +9,13 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="C:\Users\bsmor\OneDrive\Documentos\GitHub\STM32progra\Laboratorio5"/>
 			<item value="C:\Users\bsmor\OneDrive\Documentos\GitHub\STM32progra\Laboratorio4\Laboratorio4"/>
 		</list>
 		<section name="STSmartImportWizard.dialogBounds">
 			<item key="DIALOG_X_ORIGIN" value="619"/>
 			<item key="DIALOG_Y_ORIGIN" value="278"/>
-			<item key="DIALOG_WIDTH" value="1037"/>
+			<item key="DIALOG_WIDTH" value="1057"/>
 			<item key="DIALOG_HEIGHT" value="671"/>
 			<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-15|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>
 		</section>
