@@ -138,7 +138,6 @@ int main(void)
 		  direccionActual = 4;
 	  }
 
-	  // Comparo si ya se realizó el cambio así no me imprime en la terminal varias veces el mismo mensaje
 	  if (direccionActual != direccionAnterior){
 		  direccionAnterior = direccionActual;
 		  if(direccionActual != 0){
@@ -430,7 +429,6 @@ void HAL_ADC_ConvCplt_Callback(ADC_HandleTypeDef *hadc){
 
 }
 
-// Recibir datos de ATMega328P por medio de interrupción
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 {
     if (huart->Instance == USART1)
@@ -440,7 +438,7 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
         comando = rxData;
         nuevoComando = 1;
 
-        HAL_UART_Receive_IT(&huart1, &rxData, 1); //Vuelvo a iniciar el comando para interrupcion
+        HAL_UART_Receive_IT(&huart1, &rxData, 1);
     }
 }
 
