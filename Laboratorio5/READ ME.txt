@@ -1,0 +1,1 @@
+Este laboratorio consiste en hacer un medidor de frecuencia empleando el Input Capture, también se implementaron timers 6 y 7 para realizar interrupciones y así hacer parpadear dos leds a frecuencias diferentes

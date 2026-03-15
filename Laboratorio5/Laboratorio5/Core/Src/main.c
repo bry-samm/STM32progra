@@ -55,7 +55,7 @@ volatile uint32_t flanco1 = 0;
 volatile uint32_t flanco2 = 0;
 
 uint32_t delta = 0;
-uint32_t frecuencia = 0;
+float frecuencia = 0;
 // Variables para UART
 uint8_t buffer[10];
 uint8_t dato = 80;
@@ -127,17 +127,22 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+	  // Código no bloqueante para medir frecuencia de una señal
 	  if(flagMedicion){
 	      flagMedicion = 0;
 	      delta = flanco2 - flanco1;
-	      frecuencia = ftimclk / delta;
+	      frecuencia = ftimclk / (float) delta;
 
-	      sprintf((char*)datoArray, "%lu\r\n", frecuencia);
-	      HAL_UART_Transmit(&huart2, datoArray, strlen((char*)datoArray), 1000);
+	      //sprintf((char*)datoArray, "%lu\r\n", frecuencia);
+	      //HAL_UART_Transmit(&huart2, datoArray, strlen((char*)datoArray), 1000);
+
+	      sprintf(datoArray, "%.2f\r\n", frecuencia);
+	      HAL_UART_Transmit(&huart2, datoArray, strlen(datoArray), 1000);
 
 	      HAL_TIM_IC_Start_IT(&htim2, TIM_CHANNEL_1);
 	  }
 
+	  // Bandera que activo en interrupciones para hacer toggle a pin
       if(bandera_1){
     	  HAL_GPIO_TogglePin(LED_1_GPIO_Port, LED_1_Pin);
     	  bandera_1 = 0;
@@ -435,6 +440,7 @@ void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *him){
 	}
 }
 
+// Callback para detectar la interrupción del TIMER 6 y 7
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
 	if(htim == &htim6){
 		bandera_1 = 1;
