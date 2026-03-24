@@ -41,6 +41,7 @@
 #define PI 3.1415926
 #define DAC_PSC 1
 
+// Forma para comparar más fácil con una partitura
 #define TEMPO 120
 #define NEGRA (60000 / TEMPO)
 
