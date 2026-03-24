@@ -3,6 +3,12 @@
 	<item key="hasShownOverlayPopupBefore" value="true"/>
 	<item key="replaceBarOpen" value="false"/>
 	<list key="searchhistory">
+		<item value="TIM_CHANNEL_4"/>
+		<item value="htim2"/>
+		<item value="noTone"/>
+		<item value="CHANNEL_1"/>
+		<item value="sConfigOC.Pulse"/>
+		<item value="presForFrequency"/>
 		<item value="huart2"/>
 		<item value="estadoADC"/>
 		<item value="activar_conteo"/>
